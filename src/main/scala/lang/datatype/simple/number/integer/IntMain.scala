@@ -1,4 +1,4 @@
-package lang.datatype.number.integer
+package lang.datatype.simple.number.integer
 
 object IntMain extends App {
 

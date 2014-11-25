@@ -1,4 +1,4 @@
-package lang.datatype.number.floatable
+package lang.datatype.simple.number.floatable
 
 object FloatMain extends App {
 

@@ -1,4 +1,4 @@
-package lang.define
+package lang.datatype.simple.define
 
 import etc.StudentClass
 

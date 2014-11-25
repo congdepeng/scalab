@@ -1,4 +1,4 @@
-package lang.datatype.character
+package lang.datatype.simple.character
 
 object CharMain extends App {
 
