@@ -1,4 +1,4 @@
-package lang.datatype.integer
+package lang.datatype.number.integer
 
 import java.lang
 

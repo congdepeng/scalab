@@ -1,4 +1,4 @@
-package lang.datatype.integer
+package lang.datatype.number.integer
 
 object CharMain extends App {
 
@@ -12,6 +12,7 @@ object CharMain extends App {
 
   private val a: Character = Char.box('a')
   private val z: Character = Char.box('z')
-  printf("%s - %s", a.toString, z.toString)
+  printf("%d - %d\n", a.toInt, z.toInt)
+  printf("%s - %s\n", a.toString, z.toString)
 
 }
