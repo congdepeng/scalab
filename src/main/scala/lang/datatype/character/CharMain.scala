@@ -1,6 +1,6 @@
 package lang.datatype.character
 
-object CharMain extends App{
+object CharMain extends App {
 
   private val clazz: Class[_] = Char.getClass
   println(clazz)

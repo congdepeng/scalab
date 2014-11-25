@@ -20,11 +20,4 @@ object IntMain extends App {
   println(i.toString)
 
 
-  
-
-
-
-
-
-
 }
