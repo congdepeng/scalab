@@ -4,7 +4,7 @@ import scala.collection.mutable
 
 trait Filter {
 
-  def filter(request: mutable.HashMap[AnyRef, AnyRef]) ={
+  def filter(request: mutable.HashMap[AnyRef, AnyRef]) = {
     out(request)
   }
 
