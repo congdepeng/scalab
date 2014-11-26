@@ -1,4 +1,4 @@
-package lang.datatype.compound.inter_face
+package lang.datatype.compound.traits
 
 import scala.collection.mutable
 
