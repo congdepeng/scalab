@@ -18,6 +18,4 @@ object MethodDefMain extends App {
   //sum(iList) // - Error
   sum(iList: _*) // what is _*???????????
 
-
-
 }

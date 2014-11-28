@@ -1,14 +1,10 @@
 package lang.syntax.underscore
 
 //[wildcard imports]
-import javax.annotation._
 
 //[Hiding imports] Applet not imported
-import java.applet.{Applet => _, _}
 
-
-
-import scala.collection.immutable
+import java.applet.{Applet => _}
 
 object UnderscoreMain extends App {
 
@@ -37,23 +33,25 @@ object UnderscoreMain extends App {
 
 
   //[Joining letters to punctuation]
-  def add_1_!(x: Int) = x +1
+  def add_1_!(x: Int) = x + 1
+
   assert(add_1_!(1) == 2)
 
 
   //[Assignment operations]
   // because you *cannot* contact 'foo' and '=' directly, must add a _ between them
-  def foo (x: Int) { x+1 }
-  def foo_= (x: Int) { x+1 }
-  assert(foo (100) == foo_= (100))
+  def foo(x: Int) { x + 1 }
+  def foo_=(x: Int) { x + 1 }
+  assert(foo(100) == foo_=(100))
 
   //[Placeholder syntax]
   private val intAfterAdd1: List[Int] = List(1, 2) map (_ + 2)
-  assert(intAfterAdd1.reduceLeft(_+_) == 7)
+  assert(intAfterAdd1.reduceLeft(_ + _) == 7)
 
 
-  List(1, 2, 3) foreach println _
-
-
+  //[Existential types in Scala] _ means any existential types in scala
+  def size(list: List[T] forSome {type T}): Int = list.size
+  def size_(list: List[_]): Int = list.size
+  assert(size(intList) == size_(intList))
 
 }
