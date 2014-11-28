@@ -19,6 +19,7 @@ class StudentClass(name: String) {
 
   def ages = a
 
+  //because you *cannot* contact 's' and '=', must add a _ between them
   def ages_= (hp: Int, allowException: Boolean) = if (hp > 0) this.a = hp else if(allowException) throw new Error()
 
 //  def ages_=(h: Int) = if (0 <= h && h < 24) this.a = h
