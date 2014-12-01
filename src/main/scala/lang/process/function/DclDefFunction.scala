@@ -23,17 +23,24 @@ object DclDefFunction extends App {
   //- FunSig : function signature
   //- FTPC: FunTypeParamClause, this clause define T, if not have this clause, cannot use T afterwards
 
+  //def id in:out = {body}
   def compare[T, P](a: T = 0)(b: P = a): Boolean = {a == b}
   //  |-----------------FunDcl-----------------| = |-Expr-|
   //  |-----------------FunSig--------|: |-Type| = |-Expr-|
   //  |--id-| FTPC |--ParamClauses----|: |-Type| = |-Expr-|
+  assert(compare(1)(1))
+  assert(!compare(1)(2l))
+  assert(!compare(1)("2l"))
+  private val result: Boolean = compare(1)(2)
+  assert(compare(1)(2) == result)
 
 
+  //val id:(in) => out = body
   //define a function and bind to a val. (functional program, anonymous function)
-  val fun_add3: (Int, Int, Int) => Int = _ + _ + _
-  //  |--id--|: |--ParamClauses|=> |T| = |--Expr-|
-  val fun_add3T: (Int, Int, Int) => Int = {_ + _ + _}
-  //  |--id---|: |--ParamClauses|=> |T| = |--Expr---|
+  val fun_add3: (Int, Int, Int) => Int = {_ + _ + _}
+  //  |--id--|: |--ParamClauses|=> |T| = |--Expr---|
+  val fun_add3T: (Int, Int, Int) => Int = {println("before return statement");_ + _ + _}
+  //  |--id---|: |--ParamClauses|=> |T| = |--Expr-|
   val fun_add3F: (Int, Int, Int) => Int = _ + _ + _ + 100
   //  |--id---|: |--ParamClauses|=> |T| = |--Expr-------|
   val fun_add3G: ((Int, Int, Int) => Int) = _ + _ + _ + 100
@@ -49,13 +56,5 @@ object DclDefFunction extends App {
   val b:Int =1
   val c:Int =1
   val expression : Int = a + b + c + 100
-
-
-  assert(compare(1)(1))
-  assert(!compare(1)(2l))
-  assert(!compare(1)("2l"))
-  private val result: Boolean = compare(1)(2)
-  assert(compare(1)(2) == result)
-
 
 }
