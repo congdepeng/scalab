@@ -4,6 +4,7 @@ object CallByNameApp extends App{
 
   // ###########################################
   //1. => used as call by name
+  // Call-by-Name: => Type
   // ###########################################
   def high_level_like(executableUnitReturnInt: => Int) = executableUnitReturnInt * executableUnitReturnInt
   var y = 1
@@ -31,7 +32,7 @@ object CallByNameApp extends App{
 
 
   // ###########################################
-  // first "() => Unit" in one line is an anonymous function literal of arity 0
+  // first "() => Unit" in one line is an anonymous function literal of arity 0// 0-arity Functions: () => Type
   // second "() => Unit" after "val f:" is a param and return type define: 函数就必须要定义输入和输出，（）代表空输入，Unit是输出
   // ###########################################
   () => Unit
