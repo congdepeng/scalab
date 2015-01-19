@@ -42,7 +42,7 @@ object UnderscoreMain extends App {
   // because you *cannot* contact 'foo' and '=' directly, must add a _ between them
   def foo(x: Int) { x + 1 }
   def foo_=(x: Int) { x + 1 }
-  assert(foo(100) == foo_=(100))
+//  assert(foo(100) == foo_=(100))
 
   //[Placeholder syntax]
   private val intAfterAdd1: List[Int] = List(1, 2) map (_ + 2)
