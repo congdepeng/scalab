@@ -57,4 +57,11 @@ object DclDefFunction extends App {
   val c:Int =1
   val expression : Int = a + b + c + 100
 
+
+
+  //殊途同归
+  def def_fun(i:Int):Int={i+1}
+  val val_fun0:(Int)=>Int={_+1}
+  val val_fun1:(Int)=>Int={_+1}
+
 }
